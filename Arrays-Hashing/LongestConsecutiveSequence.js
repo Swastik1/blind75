@@ -23,6 +23,18 @@
  * @param {number[]} nums
  * @return {number}
  */
+
+// Use a Set for Lookups (O(1))
+//  Create a set to store unique numbers for fast lookups.
+// Skip Processed Sequences
+//  If num-1 exists in the set, skip - already processed sequence.
+// Build the Current Sequence
+//  If num-1 doesn't exist, initialize currentStreak=1 and iterate while num+1 exists.
+// Find the Longest Sequence
+//  Update streak with the max of streak and currentStreak.
+// Return the Result
+//  Return the final streak (longest sequence length).
+
 var longestConsecutive = function (nums) {
   let set = new Set(nums);
   let streak = 0;
@@ -32,8 +44,8 @@ var longestConsecutive = function (nums) {
     let currentStreak = 1;
 
     while (set.has(num + 1)) {
-      currentStreak++;
-      num++;
+      currentStreak++; // Increments the currentStreak variable by 1. This variable keeps track of the length of the current consecutive sequence being discovered.
+      num++; // Increments the num variable by 1. This moves the focus to the next element in the potential consecutive sequence.
     }
 
     streak = Math.max(streak, currentStreak);

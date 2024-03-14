@@ -21,6 +21,14 @@
 
 // solution
 
+// Logic
+// [1,1*1,1*2,2*3] ->              [1,1,2,6]
+// [12*2,4*3,1*4,1]  ->           [24,12,4,1]
+
+// set 1 as a placeholder and multiply with the initial element
+// Multiply the products of the elements and store them as elements in left array , traverse the array and do the same in right array
+// Multiply both arrays and store the result in one array
+
 /**
  * @param {number[]} nums
  * @return {number[]}
